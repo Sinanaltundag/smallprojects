@@ -182,8 +182,8 @@ footer p:hover {
     margin: 2%;
   }
   img {
-    width: 450px;
-    height: 300px;
+    width: 350px;
+    height: 250px;
   }
   h1 {
     float: none;
@@ -197,10 +197,11 @@ footer p:hover {
     display: block;
   }
   .links {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     text-align: center;
     background-color: bisque;
     margin: 3px 1px;
+    
   }
   .links:hover {
     background-color: darkgoldenrod;
@@ -226,5 +227,8 @@ footer p:hover {
   }
   main{
     margin-bottom: 100px;
+  }
+  h2{
+    margin: 1rem;
   }
 }
