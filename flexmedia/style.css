@@ -197,7 +197,7 @@ footer p:hover {
     display: block;
   }
   .links {
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-align: center;
     background-color: bisque;
     margin: 3px 1px;
@@ -223,5 +223,8 @@ footer p:hover {
   }
   footer p:hover{
       padding: 0.5rem;
+  }
+  main{
+    margin-bottom: 100px;
   }
 }
