@@ -1,0 +1,125 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  color: aliceblue;
+  font-size: 1.3rem;
+  background-color: green;
+}
+                                /* header  */
+
+.header__nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  background-color: darkgreen;
+  z-index: 1;
+  width: 100%;
+  color: aliceblue;
+  justify-content: right;
+}
+.header__nav--links {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 10px;
+  transition: 0.3s;
+}
+.header__nav--links:hover {
+  background-color: chartreuse;
+  color: darkgreen;
+  transition: 0.3s;
+}
+                                   /* main  */
+.parallax-container {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.main__background--clarusway {
+  background: url(./img/spring.jpg);
+}
+.main__background--study {
+  background: url(./img/summer.jpg);
+}
+.main__background--study,
+.main__background--clarusway {
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  position: relative;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(-1px) scale(2);
+}
+
+.sections {
+  display: block;
+  text-align: center;
+  background-color: darksalmon;
+  outline: 1.2rem groove rosybrown;
+  border: 0.7rem groove rosybrown;
+  margin: 1.2rem;
+}
+.clarusway,
+.clarusway2 {
+  outline: 10px inset green;
+  border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
+  padding: 30px;
+  position: relative;
+}
+.clarusway {
+  font-size: 100px;
+  border: 10px groove greenyellow;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: -100px;
+}
+.clarusway2 {
+  font-size: 50px;
+  top: -300px;
+}
+.section__paragraf {
+  position: relative;
+  overflow: auto;
+  padding: 100px;
+}
+                                   /* footer  */
+.footer {
+  display: flex;
+  background-color: darkgreen;
+  justify-content: space-around;
+  z-index: -1;
+}
+.footer__links {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 20px 0;
+}
+
+@media screen and (min-width: 900px) {
+  .section__paragraf {
+    padding: 220px;
+  }
+}
+@media (max-width: 760px) {
+  .header__nav {
+    justify-content: center;
+  }
+  .section__paragraf {
+    padding: 0px;
+  }
+  .clarusway,
+  .clarusway2 {
+    line-height: 3.5rem;
+    font-size: 2rem;
+  }
+}
