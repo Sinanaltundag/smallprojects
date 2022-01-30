@@ -38,6 +38,7 @@ html {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+
 }
 .main__background--clarusway {
   background: url(./img/spring.jpg);
@@ -62,11 +63,22 @@ html {
   z-index: -1;
   height: 100vh;
   width: 100vw;
-  justify-content: center;
+  justify-content:space-around;
   align-items: center;
   transform: translateZ(-1px) scale(2);
 }
-
+/* .akar{
+  position: relative;
+  top: 150px;
+  width: 70px;
+  height: 70px;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+  margin-top: 20px;
+  background-color: black;
+  background-image:url(./img/sky.jpg);
+  background-attachment: fixed;
+} */
 .sections {
   display: block;
   text-align: center;
