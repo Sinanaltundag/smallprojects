@@ -45,8 +45,16 @@ html {
 .main__background--study {
   background: url(./img/summer.jpg);
 }
+.main__background--learn {
+  background: url(./img/autumn.jpg);
+}
+.main__background--positive {
+  background: url(./img/winter.jpg);
+}
 .main__background--study,
-.main__background--clarusway {
+.main__background--clarusway,
+.main__background--positive,
+.main__background--learn {
   background-position: center;
   background-size: cover;
   display: flex;
