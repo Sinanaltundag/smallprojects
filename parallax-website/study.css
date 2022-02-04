@@ -34,7 +34,7 @@ html {
                                    /* main  */
 .parallax-container {
   perspective: 1px;
-  transform-style: preserve-3d;
+  /* transform-style: preserve-3d; */
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -135,7 +135,7 @@ html {
     justify-content: center;
   }
   .section__paragraf {
-    padding: 0px;
+    padding: 50px;
   }
   .clarusway,
   .clarusway2 {
