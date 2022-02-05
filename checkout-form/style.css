@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(./FONTS/Montserrat-Regular.ttf);
+    
+  }
+.container{
+    max-width: 700px;
+    margin: auto;
+}
+h1{
+text-align: center;
+}
+
+.flex-checkout{
+    display: flex;
+}
+
+/* Checkout form  */
+
+.checkout__form{
+    width: 60%;
+}
+h2{
+margin: 10px;
+font-size: 1.2rem;
+}
+label{
+    font-size: 0.8rem;
+}
+.form-element{
+    margin: 10px;
+    line-height: 1.5rem;
+    position: relative;
+}
+.inputs{
+    width: 80%;
+    padding: 5px 25px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+i{
+    position:relative;
+    
+}
+/* checkout__cart */
+
+.checkout__cart{
+width: 40%;
+background-color: rgb(196, 195, 195);
+border-radius: 10px;
+padding: 1rem;
+}
+.checkout-cart__product{
+    display: flex;
+    width: 100%;
+}
+img{
+    width: 100px;
+    border-radius: 10px;
+    margin: 0px 1rem 1rem 0px;
+}
+.quantitiy{
+    width: 100px;
+    padding: 5px 25px;
+}
+
+h3{
+
+}
+
