@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Montserrat;
+    font-weight: bold;
+    color: rgb(87, 87, 87);
 }
 @font-face {
     font-family: Montserrat;
@@ -10,21 +12,26 @@
     
   }
 .container{
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
+}
+h1,h2,h3,span{
+    color: rgb(15, 15, 15);
 }
 h1{
 text-align: center;
+margin: 1rem;
 }
 
 .flex-checkout{
     display: flex;
+    align-items:flex-start;
 }
 
 /* Checkout form  */
 
 .checkout__form{
-    width: 60%;
+    width: 55%;
 }
 h2{
 margin: 10px;
@@ -38,39 +45,93 @@ label{
     line-height: 1.5rem;
     position: relative;
 }
+.form-element i{
+position: relative;
+left: -427px;
+}
 .inputs{
-    width: 80%;
-    padding: 5px 25px;
+    width: 90%;
+    padding: 8px 25px;
     border-radius: 5px;
     border: 1px solid gray;
 }
-i{
-    position:relative;
+
+.form-element__country-post .form-element{
+    float: left;
     
+}
+.form-element__country-post{
+    overflow: auto;
+}
+.form-element__country-post input{
+    width: 90%;
+}
+.form-element__country-post .country i{
+    top: -30px;
+    left: 5px;
+    z-index: 1;
+}
+.form-element__country-post .post i{
+    left: -218px;
+}
+.submit{
+    float: right;
+    padding: 13px 10px;
+    
+    color: white;
+    background-color: coral;
+    border-radius: 10px;
+    border: none;
+    margin-right: 30px;
 }
 /* checkout__cart */
 
 .checkout__cart{
-width: 40%;
-background-color: rgb(196, 195, 195);
+width: 45%;
+background-color: #d3d3d3;
 border-radius: 10px;
 padding: 1rem;
 }
 .checkout-cart__product{
     display: flex;
     width: 100%;
+    line-height: 1.5rem;
+}
+.checkout-cart__product h4{
+    color:coral;
+}
+.checkout-cart__product span{
+    font-size: 0.8rem;
+    text-decoration: line-through;
 }
 img{
-    width: 100px;
+    width: 110px;
     border-radius: 10px;
     margin: 0px 1rem 1rem 0px;
 }
+.quantity-box{
+    border: 1px solid gray;
+    padding: 5px 10px;
+    width: 100px;
+    border-radius: 5px ;
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+}
 .quantitiy{
     width: 100px;
-    padding: 5px 25px;
+    /* padding: 5px 25px; */
+    text-align: center;
 }
 
 h3{
-
+font-size: 1rem;
 }
 
+.cost{
+    display: flex;
+justify-content: space-between;
+    width: 90%;
+    border-top: 1px solid gray;
+    margin-bottom: 10px;
+}

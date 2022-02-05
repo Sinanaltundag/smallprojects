@@ -75,33 +75,34 @@
               />
               <i class="fas fa-city"></i>
             </div>
-            <div class="form-element">
-              <div class="form-element--country">
+            <div class="form-element__country-post">
+              <div class="form-element country">
                 <label for="country">Country</label><br />
-                <select name="" id="">
+                <select name="country" id="country" class="inputs">
                   <option value="Turkey">Turkey</option>
                   <option value="Germany">Germany</option>
                   <option value="Nederland">Nederland</option>
                 </select>
                 <i class="fas fa-globe-americas"></i>
               </div>
-              <div class="form-element--postal">
+              <div class="form-element post">
                 <label for="postal">Post Code</label><br />
                 <input
                   type="text"
                   name="postal"
                   id="postal"
+                  class="inputs"
                   placeholder="Enter your postal code..."
                 />
                 <i class="fas fa-mail-bulk"></i>
               </div>
             </div>
             <div class="form-element">
-              <input type="checkbox" name="seen" id="seen" />
+              <input type="checkbox" name="seen" id="seen" value="seen"/>
               <label for="seen">See this information next time</label>
             </div>
             <div class="form-element">
-              <input type="submit" value="Continue" />
+              <input type="submit" value="Continue" class="submit"/>
             </div>
           </form>
         </div>
@@ -110,11 +111,11 @@
             <img src="./IMG/photo1.png" alt="Vintage Backbag" srcset="" />
             <div class="checkout-cart__product--name-price">
               <h3>Vintage Backbag</h3>
-              <h4 class="price">$54.99 <span class="discount">$94.99</span></h4>
-              <i class="fas fa-minus"></i
-              ><span  class="quantitiy">1</span><i
-                class="fas fa-plus"
-              ></i>
+              <h4 class="price">$54.99 <span class="discount">$94.99</span></h4><br>
+              <div class="quantity-box">
+                <i class="fas fa-minus"></i><span class="quantitiy">1</span
+                ><i class="fas fa-plus"></i>
+              </div>
             </div>
           </div>
           <div class="checkout-cart__product">
@@ -123,15 +124,15 @@
               <h3>Levi Shoes</h3>
               <h4 class="price">
                 $74.99 <span class="discount">$124.99</span>
-              </h4>
-              <i class="fas fa-minus"></i
-              ><span  class="quantitiy">1</span><i
-                class="fas fa-plus"
-              ></i>
+              </h4><br>
+              <div class="quantity-box">
+                <i class="fas fa-minus"></i><span class="quantitiy">1</span
+                ><i class="fas fa-plus"></i>
+              </div>
             </div>
-          </div>
-          <div class="cost">Shipping $19</div>
-          <div class="cost">Total $148.98</div>
+          </div><br><br>
+          <div class="cost"><span>Shipping</span>  <span>$19</span></div>
+          <div class="cost"><span>Total</span> <span>$148.98</span> </div>
         </div>
       </div>
     </div>
