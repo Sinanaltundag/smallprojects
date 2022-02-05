@@ -12,7 +12,7 @@
     
   }
 .container{
-    max-width: 900px;
+    width: 900px;
     margin: auto;
 }
 h1,h2,h3,span{
@@ -74,6 +74,9 @@ left: -427px;
 .form-element__country-post .post i{
     left: -218px;
 }
+button:hover{
+cursor: pointer;
+}
 .submit{
     float: right;
     padding: 13px 10px;
@@ -88,7 +91,7 @@ left: -427px;
 
 .checkout__cart{
 width: 45%;
-background-color: #d3d3d3;
+background-color: #e4e4e4;
 border-radius: 10px;
 padding: 1rem;
 }
@@ -104,6 +107,7 @@ padding: 1rem;
     font-size: 0.8rem;
     text-decoration: line-through;
 }
+
 img{
     width: 110px;
     border-radius: 10px;
@@ -118,6 +122,13 @@ img{
     justify-content:space-around;
     align-items:center;
 }
+.quantity-box button{
+    border: none;
+    background-color:rgb(187, 187, 187);
+    padding: 5px;
+    border-radius: 5px;
+}
+
 .quantitiy{
     width: 100px;
     /* padding: 5px 25px; */
@@ -134,4 +145,20 @@ justify-content: space-between;
     width: 90%;
     border-top: 1px solid gray;
     margin-bottom: 10px;
+}
+@media (max-width: 768px){
+    .flex-checkout{
+        flex-direction: column-reverse;
+    }
+    .container{
+        width: 495px;
+    }
+    .checkout__form{
+        width: 100%;
+        margin: auto;
+    }
+    .checkout__cart{
+        width: 90%;
+        margin: auto;
+    }
 }

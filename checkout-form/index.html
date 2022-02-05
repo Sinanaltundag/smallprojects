@@ -26,6 +26,7 @@
                 id="email"
                 class="inputs"
                 placeholder="Enter your email..."
+                required
               />
               <i class="fas fa-envelope"></i>
             </div>
@@ -37,6 +38,8 @@
                 id="phone"
                 class="inputs"
                 placeholder="Enter your phone..."
+                required
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               />
               <i class="fas fa-phone-alt"></i>
             </div>
@@ -50,6 +53,7 @@
                 id="fullname"
                 class="inputs"
                 placeholder="Enter your Full name..."
+                required
               />
               <i class="fas fa-user-alt"></i>
             </div>
@@ -61,6 +65,7 @@
                 id="address"
                 class="inputs"
                 placeholder="Enter your address..."
+                required
               />
               <i class="fas fa-home"></i>
             </div>
@@ -72,13 +77,14 @@
                 id="city"
                 class="inputs"
                 placeholder="Enter your city..."
+                required
               />
               <i class="fas fa-city"></i>
             </div>
             <div class="form-element__country-post">
               <div class="form-element country">
                 <label for="country">Country</label><br />
-                <select name="country" id="country" class="inputs">
+                <select name="country" id="country" class="inputs" required>
                   <option value="Turkey">Turkey</option>
                   <option value="Germany">Germany</option>
                   <option value="Nederland">Nederland</option>
@@ -88,7 +94,7 @@
               <div class="form-element post">
                 <label for="postal">Post Code</label><br />
                 <input
-                  type="text"
+                  type="number"
                   name="postal"
                   id="postal"
                   class="inputs"
@@ -102,7 +108,7 @@
               <label for="seen">See this information next time</label>
             </div>
             <div class="form-element">
-              <input type="submit" value="Continue" class="submit"/>
+              <button type="submit" class="submit">Continue</button>
             </div>
           </form>
         </div>
@@ -112,9 +118,9 @@
             <div class="checkout-cart__product--name-price">
               <h3>Vintage Backbag</h3>
               <h4 class="price">$54.99 <span class="discount">$94.99</span></h4><br>
-              <div class="quantity-box">
-                <i class="fas fa-minus"></i><span class="quantitiy">1</span
-                ><i class="fas fa-plus"></i>
+              <div class="quantity-box"><button><i class="fas fa-minus"></i></button>
+                <span class="quantitiy">1</span
+                ><button><i class="fas fa-plus"></i></button>
               </div>
             </div>
           </div>
@@ -125,9 +131,9 @@
               <h4 class="price">
                 $74.99 <span class="discount">$124.99</span>
               </h4><br>
-              <div class="quantity-box">
-                <i class="fas fa-minus"></i><span class="quantitiy">1</span
-                ><i class="fas fa-plus"></i>
+              <div class="quantity-box"><button><i class="fas fa-minus"></i></button>
+                <span class="quantitiy">1</span
+                ><button><i class="fas fa-plus"></i></button>
               </div>
             </div>
           </div><br><br>
@@ -138,3 +144,4 @@
     </div>
   </body>
 </html>
+<button></button>
