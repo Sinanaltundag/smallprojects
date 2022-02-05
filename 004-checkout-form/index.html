@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Checkout</h1>
+      <div class="flex-checkout">
+        <div class="checkout-form">
+          <form action="#" method="post">
+            <h2>Contact information</h2>
+            <div class="form-element">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="form-element">
+              <label for="phone">Phone</label>
+              <input type="tel" name="phone" id="phone" />
+            </div>
+            <h2>Contact information</h2>
+            <div class="form-element">
+              <label for="fullname">Full name</label>
+              <input type="text" name="fullname" id="fullname" />
+            </div>
+            <div class="form-element">
+              <label for="address">Address</label>
+              <input type="text" name="address" id="address" />
+            </div>
+            <div class="form-element">
+              <label for="city">City</label>
+              <input type="text" name="city" id="city" />
+            </div>
+            <div class="form-element">
+              <div class="form-element--country">
+                <label for="country">Country</label>
+                <select name="" id="">
+                  <option value="Turkey">Turkey</option>
+                  <option value="Germany">Germany</option>
+                  <option value="Nederland">Nederland</option>
+                </select>
+              </div>
+              <div class="form-element--postal">
+                <label for="postal">Post Code</label>
+                <input type="text" name="postal" id="postal" />
+              </div>
+            </div>
+            <div class="form-element">
+              <input type="checkbox" name="seen" id="seen" />
+              <label for="seen">See this information next time</label>
+            </div>
+            <div class="form-element">
+              <input type="submit" value="Continue" />
+            </div>
+          </form>
+        </div>
+        <div class="checkout-cart">
+          <div class="checkout-cart__product">
+            <img src="./IMG/photo1.png" alt="Vintage Backbag" srcset="" />
+            <div class="checkout-cart__product--name-price">
+              <h3>Vintage Backbag</h3>
+              <h4 class="price">$54.99 <span class="discount">$94.99</span></h4>
+              <i></i
+              ><input type="number" name="quantitiy" id="quantitiy" /><i></i>
+            </div>
+          </div>
+          <div class="checkout-cart__product">
+            <img src="./IMG/photo2.png" alt="Levi Shoes" srcset="" />
+            <div class="checkout-cart__product--name-price">
+              <h3>Levi Shoes</h3>
+              <h4 class="price">$74.99 <span class="discount">$124.99</span></h4>
+              <i></i><input type="number" name="quantitiy" id="quantitiy" /><i></i>
+            </div>
+            <div class="cost">Shipping $19</div>
+            <div class="cost">Total $148.98</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
