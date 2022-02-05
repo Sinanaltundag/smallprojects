@@ -103,7 +103,7 @@ padding: 1rem;
 .checkout-cart__product h4{
     color:coral;
 }
-.checkout-cart__product span{
+h4 span{
     font-size: 0.8rem;
     text-decoration: line-through;
 }
@@ -133,6 +133,7 @@ img{
     width: 100px;
     /* padding: 5px 25px; */
     text-align: center;
+    text-decoration: none;
 }
 
 h3{
