@@ -19,32 +19,51 @@ function ageCalc() {
   let minute = today.getMinutes() - birthday.getMinutes();
   let second = today.getSeconds() - birthday.getSeconds();
 
-  years.innerText = year;
-  month > 0
-    ? (months.innerText = month)
-    : ((months.innerText = month + 12),
-      (years.innerText = parseInt(years.innerText) - 1));
+  if (second < 0) {
+    minute--;
+    second += 60;
+  }
+  if (minute < 0) {
+    hour--;
+    minute += 60;
+  }
+  if (hour < 0) {
+    day--;
+    hour += 24;
+  }
+  if (day < 0) {
+    month--;
+    day += 31;
+  }
+  if (month < 0) {
+    year--;
+    month += 12;
+  }
 
-  day > 0
-    ? (days.innerText = day)
-    : ((days.innerText = day + 30),
-      (months.innerText = parseInt(months.innerText) - 1));
-  hour > 0
-    ? (hours.innerText = hour)
-    : ((hours.innerText = hour + 24),
-      (days.innerText = parseInt(days.innerText) - 1));
-  minute > 0
-    ? (minutes.innerText = minute)
-    : (minute + 60, (hours.innerText = parseInt(hours.innerText) - 1));
-  second > 0
-    ? (seconds.innerText = second)
-    : (second + 60, (minutes.innerText = parseInt(minutes.innerText) - 1));
+  if (!isNaN(year)) {
+    years.innerText = year.toString().padStart(2, "0");
+  }
+  if (!isNaN(month)) {
+    months.innerText = month.toString().padStart(2, "0");
+  }
+  if (!isNaN(day)) {
+    days.innerText = day.toString().padStart(2, "0");
+  }
+  if (!isNaN(hour)) {
+    hours.innerText = hour.toString().padStart(2, "0");
+  }
+  if (!isNaN(minute)) {
+    minutes.innerText = minute.toString().padStart(2, "0");
+  }
+  if (!isNaN(second)) {
+    seconds.innerText = second.toString().padStart(2, "0");
+  }
 }
 
 birthInput.addEventListener("input", () => {
   let birthday = new Date(birthInput.value);
   let today = new Date();
-  today - birthday < 0 
+  today - birthday < 0
     ? (alert("Girdiğiniz tarih bugünden sonra olamaz."),
       (countDisplay.style.opacity = 0),
       (birthInput.value = ""))
@@ -52,3 +71,4 @@ birthInput.addEventListener("input", () => {
       (background.style.backgroundImage = "url(./img/birth2.jpg)"),
       (countDisplay.style.opacity = 1));
 });
+
