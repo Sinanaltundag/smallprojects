@@ -1,6 +1,7 @@
 let countDisplay = document.getElementById("countdown");
 let background = document.getElementsByTagName("body")[0];
 let birthInput = document.querySelector("[name='birthday']");
+let selectText = document.getElementsByTagName("label")[0];
 
 let years = document.getElementById("years");
 let months = document.getElementById("months");
@@ -40,26 +41,15 @@ function ageCalc() {
     month += 12;
   }
 
-  if (!isNaN(year)) {
-    years.innerText = year.toString().padStart(2, "0");
-  }
-  if (!isNaN(month)) {
-    months.innerText = month.toString().padStart(2, "0");
-  }
-  if (!isNaN(day)) {
-    days.innerText = day.toString().padStart(2, "0");
-  }
-  if (!isNaN(hour)) {
-    hours.innerText = hour.toString().padStart(2, "0");
-  }
-  if (!isNaN(minute)) {
-    minutes.innerText = minute.toString().padStart(2, "0");
-  }
-  if (!isNaN(second)) {
-    seconds.innerText = second.toString().padStart(2, "0");
-  }
+  isNaN(year) || birthday.getFullYear() < 1000
+    ? (countDisplay.style.opacity = 0)
+    : (years.innerText = year.toString().padStart(2, "0"));
+  months.innerText = month.toString().padStart(2, "0");
+  days.innerText = day.toString().padStart(2, "0");
+  hours.innerText = hour.toString().padStart(2, "0");
+  minutes.innerText = minute.toString().padStart(2, "0");
+  seconds.innerText = second.toString().padStart(2, "0");
 }
-
 birthInput.addEventListener("input", () => {
   let birthday = new Date(birthInput.value);
   let today = new Date();
@@ -71,4 +61,3 @@ birthInput.addEventListener("input", () => {
       (background.style.backgroundImage = "url(./img/birth2.jpg)"),
       (countDisplay.style.opacity = 1));
 });
-
