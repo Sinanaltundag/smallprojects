@@ -41,7 +41,7 @@ h1 {
   margin: -80px 0 40px;
 }
 
-.year {
+/* .year {
   font-size: 200px;
   z-index: -1;
   opacity: 0.2;
@@ -49,13 +49,14 @@ h1 {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-}
+} */
 
 .countdown {
   /* display: flex; */
+
   opacity: 0;
   display: flex;
-  transform: scale(2);
+  /* transform: scale(2); */
 }
 
 .time {
@@ -64,6 +65,7 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: 20px;
+  font-size: 2rem;
 }
 
 .time h2 {
@@ -71,21 +73,31 @@ h1 {
 }
 
 @media (max-width: 500px) {
+ 
   h1 {
     font-size: 45px;
+    margin: 0px 0 40px;
+    
   }
 
   .time {
     margin: 5px;
+    
   }
 
   .time h2 {
-    font-size: 12px;
+    font-size: 22px;
     margin: 0;
   }
+  .countdown{
+    flex-direction: column;
+    /* display: block; */
+    overflow: auto;
+   
 
+  }
   .time small {
-    font-size: 10px;
+    font-size: 16px;
   }
 }
 
@@ -95,4 +107,5 @@ input[type="time"] {
     width: 200px;
     height: 30px;
     border: 2px solid green;
+    
 }
