@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    text-align: center;
+    background-color: darkblue;
+    color: aliceblue;
+    padding: 1rem;
+}
+/* aside */
+aside{
+    float: left;
+    padding: 2rem;
+}
+a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-align: center;
+}
+aside li{
+    list-style-type: none;
+    padding: 5px;
+}
+
+/* main */
+.main__pages{
+    /* float: right; */
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem 2rem;
+}
+.page{
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+img{
+   max-width: 100%; 
+    height: auto;
+}
+
