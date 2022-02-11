@@ -5,9 +5,15 @@
 }
 header {
   text-align: center;
+  width: 100%;
   background-color: darkblue;
   color: aliceblue;
   padding: 1rem;
+  position: fixed;
+  top: 0;
+}
+.container {
+  margin-top: 60px;
 }
 /* aside */
 aside {
@@ -25,7 +31,6 @@ aside li {
   margin: 3px;
   background-color: antiquewhite;
   border-radius: 20px;
-
 }
 
 /* main */
@@ -54,8 +59,7 @@ img {
   }
 }
 @media (max-width: 768px) {
-  
-    .main__pages {
+  .main__pages {
     grid-template-columns: 1fr;
   }
   aside {
@@ -68,5 +72,10 @@ img {
   }
   aside li {
     display: inline-block;
+  }
+}
+@media (max-width: 406px) {
+  h1 {
+    font-size: 1.5rem;
   }
 }
