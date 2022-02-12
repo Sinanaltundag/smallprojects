@@ -32,14 +32,38 @@ function ageCalc() {
     day--;
     hour += 24;
   }
-  if (day < 0) {
-    month--;
-    day += 31;
-  }
   if (month < 0) {
     year--;
     month += 12;
   }
+  if (day < 0) {
+    month--;
+    console.log(month);
+    switch (month) {
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        day += 30;
+        console.log(day);
+        break;
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        day += 31;
+        console.log(day);
+        break;
+      case 2:
+        day += 28;
+        break;
+    }
+  }
+
+  
 
   isNaN(year) || birthday.getFullYear() < 1000
     ? (countDisplay.style.opacity = 0)
