@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#container{
+    background-color: antiquewhite;
+    text-align: center;
+    margin: 20px auto;
+    padding: 2rem;
+}
+
+.tennis{
+    background-image: url(./img/tennis.jpg);
+    background-size: cover;
+    height: 400px;
+    width: 700px;
+    margin: 20px auto;
+}
+input,button,label{
+    padding: 0.6rem;
+    margin: 2rem 1rem;
+    font-size: 1.2rem;
+}
+p,span{
+    font-size: 1.5rem;
+    margin: 1.5rem 2rem;
+    color:chartreuse;
+}
+button, input{
+    color: black;
+}
