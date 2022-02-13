@@ -2,9 +2,9 @@ let inputNum = document.getElementById("guess");
 let checkButton = document.getElementById("check");
 let attemptNum = document.getElementById("attempt");
 let upDown = document.getElementById("up-down");
-
+let attempts = document.getElementById("attempts")
 let luckyNum = Math.floor(Math.random() * 100) + 1;
-let attempt = 2;
+let attempt = 10;
 let attempted = [];
 
 function guess(luckyNum) {
@@ -55,6 +55,7 @@ function refresh() {
   }
   attempted.push(inputNum.value);
   attemptNum.innerHTML = attempt;
+  attempts.innerHTML= attempted.join(", ");
   inputNum.value = "";
 }
 checkButton.addEventListener("click", () => {
