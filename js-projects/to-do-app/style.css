@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+
+}
+.container, .help{
+    width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.5rem;
+    background-color: coral;
+    border-radius: 20px;
+}
+
+.todo-list, #add, .erase, #add-button, h1, h4{
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+input{
+    width: 80%;
+    font-size: 1.5rem;
+}
+ul{
+    width: 100%;
+    
+}
+.flex{
+    display: flex;
+    justify-content: center;
+}
+
+.fa-check{
+    position: absolute;
+    visibility: hidden;
+}
