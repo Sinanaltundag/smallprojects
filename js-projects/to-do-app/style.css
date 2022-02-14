@@ -3,9 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
 
-}
 .container, .help{
     width: 500px;
     margin: 2rem auto;
