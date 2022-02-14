@@ -35,3 +35,8 @@ ul{
     position: absolute;
     visibility: hidden;
 }
+@media (max-width: 1024px){
+    body{
+        flex-direction: column;
+    }
+}
