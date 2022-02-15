@@ -5,7 +5,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  min-height: 100vh;
+  min-height: 96vh;
   grid-template-columns: 100%;
   grid-template-rows: 10% 75% 10%;
   display: grid;
@@ -91,7 +91,7 @@ button {
 .section-middle h3,
 .section-middle p,
 .section-top p {
-  padding: 1rem 0;
+  padding-bottom: 1rem ;
 }
 .about--inner {
   padding: 1rem;
