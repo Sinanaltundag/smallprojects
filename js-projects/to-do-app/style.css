@@ -22,18 +22,20 @@ input{
     width: 80%;
     font-size: 1.5rem;
 }
+button{
+    font-size: 1.5rem;
+}
 ul{
-    width: 100%;
-    
+    width: 96%;
 }
 .flex{
     display: flex;
     justify-content: center;
 }
 
-.fa-check{
-    position: absolute;
-    visibility: hidden;
+.fa-pen{
+    padding: 1rem 0;
+    visibility: visible;
 }
 @media (max-width: 1024px){
     body{

@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do App</title>
     <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/93d1716ba6.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/93d1716ba6.js" crossorigin="anonymous"></script>
   </head>
   <body class="flex">
     <div class="container">
       <h1>To Do List</h1>
+      <h4>Completed Tasks: <span id="all"></span> / <span id="completed">0</span></h4>
       <div class="flex">
         <input type="text" id="add" /><button id="add-button">
           <i class="fas fa-plus"></i>
@@ -21,8 +19,8 @@
       </div>
       <div id="todo" class="flex">
         <ul>
-          <li class="flex list"><i class="fas fa-check"></i><input type="text" class="todo-list" value="Have a good breakfast" disabled /><button class="erase"><i class="fas fa-minus"></i></button></li>
-          <li class="flex list"><i class="fas fa-check"></i><input type="text" class="todo-list" value="Make a Project" disabled /><button class="erase"><i class="fas fa-minus"></i></button></li>
+          <li class="flex list"><i class="fas fa-solid fa-pen"></i><input type="text" class="todo-list" value="Have a good breakfast" disabled /><button class="erase">-</button></li>
+          <li class="flex list"><i class="fas fa-solid fa-pen"></i><input type="text" class="todo-list" value="Make a Project" disabled /><button class="erase">-</button></li>
           
         </ul>
       </div>
