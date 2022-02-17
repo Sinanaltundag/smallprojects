@@ -4,7 +4,7 @@ let opSpan = document.getElementById("op");
 let calculator = document.getElementById("container");
 let numbers = document.querySelectorAll(".numbers");
 
-function operate() {
+function operate(op) {
   if (resultLine.innerHTML == "") {
     return;
   }
@@ -20,9 +20,28 @@ if (opSpan.innerHTML=="" && operateLine.innerHTML){
       resultLine.innerHTML = "";
       return;
     }
-    operateLine.innerHTML = eval(
-      operateLine.innerHTML + opSpan.innerHTML + resultLine.innerHTML
-    );
+    if (op=="=") {
+      op=opSpan.innerHTML
+    }
+    switch (op) {
+      case "+":
+        operateLine.innerHTML = +operateLine.innerHTML + +resultLine.innerHTML;
+        break;
+      case "-":
+        operateLine.innerHTML = operateLine.innerHTML - resultLine.innerHTML;
+        break;
+      case "*":
+        operateLine.innerHTML = operateLine.innerHTML * resultLine.innerHTML;
+        break;
+      case "/":
+        operateLine.innerHTML = operateLine.innerHTML / resultLine.innerHTML;
+        break;
+      case "=":
+        operateLine.innerHTML = operateLine.innerHTML + resultLine.innerHTML;
+        break;
+    
+    }
+    // operateLine.innerHTML = Number(operateLine.innerHTML) + opSpan.innerHTML + Number(resultLine.innerHTML);
     resultLine.innerHTML = "";
     return;
   }
@@ -40,7 +59,7 @@ if (e.target.tagName==='BUTTON') {
     case "minus":
     case "percent":
       if (resultLine.innerHTML){
-        operate();
+        operate(opSpan.innerHTML);
       }
       
       if (operateLine.innerHTML){
@@ -56,11 +75,16 @@ if (e.target.tagName==='BUTTON') {
     case "n7":
     case "n8":
     case "n9":
+      resultLine.innerHTML += e.target.innerHTML;
+      break;
     case "n0":
+      /* if (!resultLine.innerHTML[0]==0&&) {
+        resultLine.innerHTML[0]==0
+      } */
       resultLine.innerHTML += e.target.innerHTML;
       break;
     case "equal":
-      operate();
+      operate("=");
       opSpan.innerHTML = "";
       break;
     case "ac":
