@@ -5,44 +5,71 @@ let complete = document.getElementById("completed");
 let todoDiv = document.getElementById("todo");
 let lists = document.querySelectorAll(".list");
 let ulList = document.getElementsByTagName("ul")[0];
-
-add.addEventListener("click", () => {
-  if (newInput.value.trim()) {
-    ulList.innerHTML += `<li class="flex list"><i class="fas fa-solid fa-pen"></i><input type="text" class="todo-list" value="${newInput.value}" disabled /><button class="erase">-</button></li>`;
-    newInput.value = "";
-  }
-  complete.innerHTML= completed;
-  all.innerHTML = document.querySelectorAll(".list").length;
-});
-let completed=0;
+let todoContainer = document.getElementById("todos");
+add.addEventListener(
+  "click",
+  (addFunc = () => {
+    if (newInput.value.trim()) {
+      ulList.innerHTML += `<li class="flex list"><i class="fas fa-solid fa-pen"></i><input type="text" class="todo-list" value="${newInput.value}" disabled /><button class="erase">-</button></li>`;
+      newInput.value = "";
+    }
+    complete.innerHTML = completed;
+    all.innerHTML = document.querySelectorAll(".list").length;
+  })
+);
+let completed = 0;
 all.innerHTML = lists.length;
 
-todoDiv.addEventListener("click",(e)=>{
-  let inputEdit=e.target.parentElement.childNodes[1];
+todoDiv.addEventListener(
+  "click",
+  (todo = (e) => {
+    let inputEdit = e.target.parentElement.childNodes[1];
 
-  if (e.target.tagName ==='BUTTON') {
-    if (inputEdit.style.textDecoration == "line-through") {
-      completed--
+    if (e.target.tagName === "BUTTON") {
+      if (inputEdit.style.textDecoration == "line-through") {
+        completed--;
+      }
+      e.target.parentElement.remove();
     }
-    e.target.parentElement.remove()
-    
-  }
-  if (e.target.tagName==='INPUT'){
-    (e.target.style.textDecoration == "line-through")?(e.target.style.textDecoration = "none",completed--):(e.target.style.textDecoration = "line-through", completed++);
-  }
-  if (e.target.tagName==='I') {
-    if (inputEdit.disabled) {
-      inputEdit.disabled=false
-      return
+    if (e.target.tagName === "INPUT") {
+      e.target.style.textDecoration == "line-through"
+        ? ((e.target.style.textDecoration = "none"), completed--)
+        : ((e.target.style.textDecoration = "line-through"), completed++);
     }
-    inputEdit.disabled=true
-  }
-  complete.innerHTML= completed;
-  all.innerHTML = document.querySelectorAll(".list").length;
-})
-
-
-
+    if (e.target.tagName === "I") {
+      if (inputEdit.disabled) {
+        inputEdit.disabled = false;
+        todoDiv.removeEventListener("click", todo);
+        add.removeEventListener("click", addFunc);
+        newInput.disabled = true;
+        todoContainer.style.opacity = "0.3";
+        // todoDiv.style.opacity="0.3";
+        // inputEdit.style.opacity="1";
+        inputEdit.addEventListener("keyup", (e) => {
+          if (e.key == "Enter") {
+            inputEdit.disabled = true;
+            newInput.disabled = false;
+            todoContainer.style.opacity = "1";
+            // todoDiv.style.opacity="1"
+            todoDiv.addEventListener("click", todo);
+            add.EventListener("click", addFunc);
+          }
+        });
+        return;
+      }
+      inputEdit.disabled = true;
+    }
+    complete.innerHTML = completed;
+    all.innerHTML = document.querySelectorAll(".list").length;
+  })
+);
+function edit() {
+  inputEdit.addEventListener("keyup", (e) => {
+    if (e.key == "Enter") {
+      todoDiv.addEventListener("click", a);
+    }
+  });
+}
 /* function completedTodos() {
   
 lists.forEach(item=>{
@@ -76,7 +103,7 @@ list.addEventListener("dblclick", () => {
     });
   });
   } */
-    /* function check(list) {
+/* function check(list) {
       function handler() {
         if (list.childNodes[0].style.visibility == "visible") {
           list.childNodes[1].style.textDecoration = "none";
