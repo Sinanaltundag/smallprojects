@@ -21,7 +21,7 @@ height: 100vh;
     border-radius: 20px;
     box-shadow: 2px 4px 5px rgb(117, 76, 0);
     outline: 10px  groove goldenrod;
-    outline-offset: -11px;
+    outline-offset: -10px;
     overflow: auto;
 }
 
