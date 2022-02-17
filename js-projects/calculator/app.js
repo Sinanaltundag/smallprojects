@@ -3,9 +3,6 @@ let resultLine = document.getElementById("result");
 let opSpan = document.getElementById("op");
 let calculator = document.getElementById("container");
 let numbers = document.querySelectorAll(".numbers");
-console.log(eval("-5-3")); 
-
-
 
 function operate() {
   if (resultLine.innerHTML == "") {
@@ -34,7 +31,8 @@ if (opSpan.innerHTML=="" && operateLine.innerHTML){
 }
 
 calculator.addEventListener("click", (e) => {
-  console.log(e);
+  console.log();
+if (e.target.tagName==='BUTTON') {
   switch (e.target.id) {
     case "divide":
     case "multiply":
@@ -82,5 +80,7 @@ calculator.addEventListener("click", (e) => {
       resultLine.innerHTML += e.target.innerHTML;
       break;
   }
+}
+  
 });
 
