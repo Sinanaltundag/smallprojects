@@ -1,0 +1,48 @@
+*{
+    margin: 1rem 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    font-family: 'Chewy', cursive;
+
+}
+
+.container{
+    text-align: center;
+}
+button,input{
+    margin-left: 1rem;
+    padding: 1rem;
+}
+h1{
+    font-size: 3rem;
+    outline: 2px solid purple;
+font-family: 'Monoton', cursive;
+}
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+}
+p{
+    font-size: 1.5rem;
+}
+p:nth-child(odd){
+    background-color: #e73c7e;
+}
+p:nth-child(even){
+    background-color:#23a6d5;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 75%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
