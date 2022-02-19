@@ -44,6 +44,7 @@ h1{
     line-height: 90px;
     font-size: 2rem;
     cursor: pointer;
+    color: white;
 }
 .buttons:hover{
     background-color: #181818;
