@@ -62,6 +62,9 @@ if (e.target.tagName==='BUTTON') {
     case "add":
     case "minus":
     case "percent":
+      if (resultLine.innerHTML.endsWith(".")) {
+        resultLine.innerHTML = resultLine.innerHTML.slice(0, -1);
+      }
       if (resultLine.innerHTML){
         operate(opSpan.innerHTML);
       }
