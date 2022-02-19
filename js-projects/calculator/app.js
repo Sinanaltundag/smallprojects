@@ -3,6 +3,14 @@ let resultLine = document.getElementById("result");
 let opSpan = document.getElementById("op");
 let calculator = document.getElementById("container");
 let numbers = document.querySelectorAll(".numbers");
+let clockTop = document.getElementById("clock");
+
+
+setInterval(() => {
+  const time = new Date();
+const [h,m,s] = [time.getHours().toString().padStart(2,"0"), time.getMinutes().toString().padStart(2,"0"), time.getSeconds().toString().padStart(2,"0")] 
+clockTop.innerHTML = h + ":" + m +":"+s;
+}, 1000);
 
 function operate(op) {
   if (resultLine.innerHTML == "") {
@@ -30,16 +38,13 @@ if (opSpan.innerHTML=="" && operateLine.innerHTML){
       case "-":
         operateLine.innerHTML = operateLine.innerHTML - resultLine.innerHTML;
         break;
-      case "*":
+      case "×":
         operateLine.innerHTML = operateLine.innerHTML * resultLine.innerHTML;
         break;
-      case "/":
+      case "÷":
         operateLine.innerHTML = operateLine.innerHTML / resultLine.innerHTML;
         break;
-      case "=":
-        operateLine.innerHTML = operateLine.innerHTML + resultLine.innerHTML;
-        break;
-    
+     
     }
     // operateLine.innerHTML = Number(operateLine.innerHTML) + opSpan.innerHTML + Number(resultLine.innerHTML);
     resultLine.innerHTML = "";
@@ -50,7 +55,6 @@ if (opSpan.innerHTML=="" && operateLine.innerHTML){
 }
 
 calculator.addEventListener("click", (e) => {
-  console.log();
 if (e.target.tagName==='BUTTON') {
   switch (e.target.id) {
     case "divide":
@@ -75,16 +79,16 @@ if (e.target.tagName==='BUTTON') {
     case "n7":
     case "n8":
     case "n9":
-      resultLine.innerHTML += e.target.innerHTML;
-      break;
     case "n0":
-      /* if (!resultLine.innerHTML[0]==0&&) {
-        resultLine.innerHTML[0]==0
-      } */
-      resultLine.innerHTML += e.target.innerHTML;
+      if (resultLine.innerHTML==="0" ) {
+        resultLine.innerHTML=""
+      }
+      if (resultLine.innerHTML.length<16) {
+        resultLine.innerHTML += e.target.innerHTML;
+      }
       break;
     case "equal":
-      operate("=");
+      operate(opSpan.innerHTML);
       opSpan.innerHTML = "";
       break;
     case "ac":
@@ -100,11 +104,7 @@ if (e.target.tagName==='BUTTON') {
         resultLine.innerHTML += ".";
       }
       break
-    default:
-      resultLine.innerHTML += e.target.innerHTML;
-      break;
-  }
+    }
 }
   
 });
-
