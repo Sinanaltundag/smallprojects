@@ -9,8 +9,6 @@ let st = 0;
 shipping.innerText = "15.00";
 totalPrice();
 function totalPrice() {
-    
-    
   const priceTexts = document.querySelectorAll(".product-line-price");
   priceTexts.forEach((e) => {
     st += +e.innerText;
@@ -20,46 +18,49 @@ function totalPrice() {
   shipping.innerText = subTotal.innerHTML == 0 ? 0 : "15.00";
   total.innerHTML = (+shipping.innerText + st * 1.18).toFixed(2);
   st = 0;
-  loading.style.visibility="hidden";
+  loading.style.visibility = "hidden";
 }
-checkoutPanel.addEventListener("click", () => {
-
- 
-
-  //   console.log(e);
-  /* if (e.target.classList.contains("fa-minus")) {
-   productPrice = e.target.parentElement.parentElement.childNodes[3].innerText;
-    if (e.target.parentElement.parentElement.childNodes[3].innerText > 1) {
-      +e.target.parentElement.parentElement.childNodes[3].innerText--;
-    }
-} */
-});
+checkoutPanel.addEventListener("click", () => {});
 products.forEach((product) => {
   const priceText = product.querySelector(".product-line-price");
   let singlePrice = product.getElementsByTagName("strong")[0].innerText;
   product.addEventListener("click", (e) => {
     const quantity = product.querySelector("#product-quantity");
-    
+
     if (e.target.classList.contains("fa-minus")) {
       if (quantity.innerText > 1) {
         quantity.innerText--;
         priceText.innerText = (singlePrice * quantity.innerText).toFixed(2);
-        loading.style.visibility="visible";
-       setTimeout(totalPrice,1000) 
-    } else {
-        confirm("Are you sure to remove product from cart?")?(product.remove(),loading.style.visibility="visible",setTimeout(totalPrice,1000)):null;
-        
-    }
+        loading.style.visibility = "visible";
+        setTimeout(totalPrice, 1000);
+      } else {
+        confirm("Are you sure to remove product from cart?")
+          ? (product.remove(),
+            (loading.style.visibility = "visible"),
+            setTimeout(totalPrice, 1000))
+          : null;
+      }
     }
     if (e.target.classList.contains("fa-plus")) {
       quantity.innerText++;
       priceText.innerText = (singlePrice * quantity.innerText).toFixed(2);
-      loading.style.visibility="visible";
-      setTimeout(totalPrice,1000)
+      loading.style.visibility = "visible";
+      setTimeout(totalPrice, 1000);
     }
     if (e.target.classList.contains("remove-product")) {
-        confirm("Are you sure to remove product from cart?")?(product.remove(),loading.style.visibility="visible",setTimeout(totalPrice,1000)):null;
-      
+      confirm("Are you sure to remove product from cart?")
+        ? (product.remove(),
+          (loading.style.visibility = "visible"),
+          setTimeout(totalPrice, 1000))
+        : null;
     }
   });
 });
+
+//   ana divden seçersek
+/* if (e.target.classList.contains("fa-minus")) {
+ productPrice = e.target.parentElement.parentElement.childNodes[3].innerText;
+  if (e.target.parentElement.parentElement.childNodes[3].innerText > 1) {
+    +e.target.parentElement.parentElement.childNodes[3].innerText--;
+  }
+} */
