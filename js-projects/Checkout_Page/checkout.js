@@ -5,19 +5,19 @@ const shipping = document.querySelector("#cart-shipping p:nth-child(2)");
 const total = document.querySelector("#cart-total p:nth-child(2)");
 const products = document.querySelectorAll(".product");
 const loading = document.getElementById("loading");
-let st = 0;
 shipping.innerText = "15.00";
 totalPrice();
 function totalPrice() {
+  let singleTotal = 0;
   const priceTexts = document.querySelectorAll(".product-line-price");
   priceTexts.forEach((e) => {
-    st += +e.innerText;
+    singleTotal += +e.innerText;
   });
-  subTotal.innerHTML = st.toFixed(2);
-  tax.innerHTML = (st * 0.18).toFixed(2);
+  subTotal.innerHTML = singleTotal.toFixed(2);
+  tax.innerHTML = (singleTotal * 0.18).toFixed(2);
   shipping.innerText = subTotal.innerHTML == 0 ? 0 : "15.00";
-  total.innerHTML = (+shipping.innerText + st * 1.18).toFixed(2);
-  st = 0;
+  total.innerHTML = (+shipping.innerText + singleTotal * 1.18).toFixed(2);
+  singleTotal = 0;
   loading.style.visibility = "hidden";
 }
 checkoutPanel.addEventListener("click", () => {});
