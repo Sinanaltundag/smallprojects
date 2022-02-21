@@ -4,7 +4,7 @@ let opSpan = document.getElementById("op");
 let calculator = document.getElementById("container");
 let numbers = document.querySelectorAll(".numbers");
 let clockTop = document.getElementById("clock");
-
+if (Infinity) console.log("object");
 
 setInterval(() => {
   const time = new Date();
@@ -13,9 +13,8 @@ clockTop.innerHTML = h + ":" + m +":"+s;
 }, 1000);
 
 function operate(op) {
-  if (resultLine.innerHTML == "") {
-    return;
-  }
+  if (resultLine.innerHTML == "") return;
+
 if (opSpan.innerHTML=="" && operateLine.innerHTML){
          operateLine.innerHTML=resultLine.innerHTML;
       resultLine.innerHTML=""
@@ -28,9 +27,8 @@ if (opSpan.innerHTML=="" && operateLine.innerHTML){
       resultLine.innerHTML = "";
       return;
     }
-    if (op=="=") {
-      op=opSpan.innerHTML
-    }
+    if (op=="=") op=opSpan.innerHTML;
+    
     switch (op) {
       case "+":
         operateLine.innerHTML = +operateLine.innerHTML + +resultLine.innerHTML;
@@ -42,18 +40,18 @@ if (opSpan.innerHTML=="" && operateLine.innerHTML){
         operateLine.innerHTML = operateLine.innerHTML * resultLine.innerHTML;
         break;
       case "÷":
-        operateLine.innerHTML = operateLine.innerHTML / resultLine.innerHTML;
+        operateLine.innerHTML = (operateLine.innerHTML / resultLine.innerHTML != Infinity)? operateLine.innerHTML / resultLine.innerHTML:0;
         break;
      
     }
-    // operateLine.innerHTML = Number(operateLine.innerHTML) + opSpan.innerHTML + Number(resultLine.innerHTML);
+
     resultLine.innerHTML = "";
     return;
   }
   operateLine.innerHTML = resultLine.innerHTML;
   resultLine.innerHTML = "";
 }
-
+on
 calculator.addEventListener("click", (e) => {
 if (e.target.tagName==='BUTTON') {
   switch (e.target.id) {
@@ -95,7 +93,8 @@ if (e.target.tagName==='BUTTON') {
       opSpan.innerHTML = "";
       break;
     case "ac":
-      resultLine.innerHTML = opSpan.innerHTML = operateLine.innerHTML = "";
+      resultLine.innerHTML = 0
+      opSpan.innerHTML = operateLine.innerHTML = "";
       break;
     case "del":
       if (resultLine.innerHTML) {
