@@ -59,9 +59,9 @@ if (e.target.tagName==='BUTTON') {
     case "add":
     case "minus":
     case "percent":
-      if (isNaN(+operateLine.innerHTML)) {
-        document.getElementById("ac").click();
-        return
+      if (isNaN(+operateLine.innerHTML)) {                          //
+        document.getElementById("ac").click();                       // isNaN sonuçların NaN çıkması durumunun kontrolü
+        return                                                      //
       }
       if (resultLine.innerHTML.endsWith(".")) {
         resultLine.innerHTML = resultLine.innerHTML.slice(0, -1);
