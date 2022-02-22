@@ -4,7 +4,6 @@ let opSpan = document.getElementById("op");
 let calculator = document.getElementById("container");
 let numbers = document.querySelectorAll(".numbers");
 let clockTop = document.getElementById("clock");
-if (Infinity) console.log("object");
 
 setInterval(() => {
   const time = new Date();
@@ -40,7 +39,7 @@ if (opSpan.innerHTML=="" && operateLine.innerHTML){
         operateLine.innerHTML = operateLine.innerHTML * resultLine.innerHTML;
         break;
       case "÷":
-        operateLine.innerHTML = (operateLine.innerHTML / resultLine.innerHTML != Infinity)? operateLine.innerHTML / resultLine.innerHTML:0;
+        operateLine.innerHTML = (operateLine.innerHTML / resultLine.innerHTML == Infinity || isNaN(operateLine.innerHTML / resultLine.innerHTML))?"Can not use 0 for division.": operateLine.innerHTML / resultLine.innerHTML;
         break;
      
     }
@@ -51,7 +50,7 @@ if (opSpan.innerHTML=="" && operateLine.innerHTML){
   operateLine.innerHTML = resultLine.innerHTML;
   resultLine.innerHTML = "";
 }
-on
+
 calculator.addEventListener("click", (e) => {
 if (e.target.tagName==='BUTTON') {
   switch (e.target.id) {
@@ -60,6 +59,10 @@ if (e.target.tagName==='BUTTON') {
     case "add":
     case "minus":
     case "percent":
+      if (isNaN(+operateLine.innerHTML)) {
+        document.getElementById("ac").click();
+        return
+      }
       if (resultLine.innerHTML.endsWith(".")) {
         resultLine.innerHTML = resultLine.innerHTML.slice(0, -1);
       }
