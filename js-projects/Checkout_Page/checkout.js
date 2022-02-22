@@ -1,4 +1,3 @@
-const checkoutPanel = document.getElementById("product-painel");
 const subTotal = document.querySelector("#cart-subtotal p:nth-child(2)");
 const tax = document.querySelector("#cart-tax p:nth-child(2)");
 const shipping = document.querySelector("#cart-shipping p:nth-child(2)");
@@ -20,7 +19,6 @@ function totalPrice() {
   singleTotal = 0;
   loading.style.visibility = "hidden";
 }
-checkoutPanel.addEventListener("click", () => {});
 products.forEach((product) => {
   const priceText = product.querySelector(".product-line-price");
   let singlePrice = product.getElementsByTagName("strong")[0].innerText;
