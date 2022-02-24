@@ -63,9 +63,9 @@ if (e.target.tagName==='BUTTON') {
         document.getElementById("ac").click();                       // isNaN sonuçların NaN çıkması durumunun kontrolü
         return                                                      //
       }
-      if (resultLine.innerHTML.endsWith(".")) {
-        resultLine.innerHTML = resultLine.innerHTML.slice(0, -1);
-      }
+      
+        resultLine.innerHTML = (resultLine.innerHTML.endsWith(".")) &&resultLine.innerHTML.slice(0, -1);
+      
       if (resultLine.innerHTML){
         operate(opSpan.innerHTML);
       }
