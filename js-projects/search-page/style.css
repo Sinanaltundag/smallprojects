@@ -1,0 +1,55 @@
+.form-container  {
+    width: 85vw;
+    margin: 0 auto;
+    max-width: 40rem;
+    background: #fff;
+    padding: 2rem 2.5rem;
+    text-transform: capitalize;
+    border-radius: 0.25rem;
+    box-shadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+}
+.form-container input {
+    width: 100%;
+    border: none;
+    border-color: transparent;
+    background: #F1F5F8;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+.menu-section{
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    gap: 3rem 2rem;
+    justify-items: center;
+}
+.menu-item {
+    display: grid;
+    gap: 1rem 2rem;
+    max-width: 25rem;
+}
+.photo {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+    border: 0.35rem solid #C59D5F;
+    border-radius: 0.25rem;
+    display: block;
+}
+.item-info header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px dotted #617D98;
+}
+.item-info h2 {
+    margin-bottom: 0.5rem;
+}
+.price {
+    color: #C59D5F;
+}
+.item-text {
+    margin-bottom: 0;
+    padding-top: 1rem;
+}
