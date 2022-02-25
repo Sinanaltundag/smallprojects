@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.container h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.container input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.container input:focus {
+  border-color: rgba(0, 0, 255, 0.3);
+}
+
+.container label,
+.container .boolk-list,
+.container .headers {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  outline: none;
+}
+
+.container button {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.container button:hover {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+.container .boolk-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 4fr 4fr 1fr;
+      grid-template-columns: 3fr 4fr 4fr 1fr;
+}
+/*# sourceMappingURL=style.css.map */
