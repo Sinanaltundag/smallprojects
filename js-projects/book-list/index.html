@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
     <div class="container">
@@ -17,12 +18,20 @@
       <label for="isbn">ISBN#</label><br />
       <input type="text" id="isbn"/><br>
       <button type="submit">SUBMIT</button>
-<div class="book-list">
-    <div><p class="headers">Title</p></div>
-    <div><p class="headers">Author</p></div>
-    <p class="headers">ISBN</p>
-    <p class="headers"></p>
-</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
     </div>
     <script src="./app.js"></script>
   </body>

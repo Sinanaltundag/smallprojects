@@ -58,10 +58,24 @@
   border-color: rgba(0, 0, 0, 0.5);
 }
 
-.container .boolk-list {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 3fr 4fr 4fr 1fr;
-      grid-template-columns: 3fr 4fr 4fr 1fr;
+.container table, .container table td, .container table th {
+  width: 100%;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.container table td, .container table th {
+  width: auto;
+}
+
+.container table a {
+  padding: 0.5rem;
+  background-color: red;
+  color: aliceblue;
+  cursor: pointer;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=style.css.map */
