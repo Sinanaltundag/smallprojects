@@ -58,7 +58,17 @@
   border-color: rgba(0, 0, 0, 0.5);
 }
 
-.container table, .container table td, .container table th {
+.container div {
+  background-color: red;
+  color: aliceblue;
+  border: 1px solid darkred;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.container table, .container table td,
+.container table th {
   width: 100%;
   border: 1px solid grey;
   border-collapse: collapse;
@@ -67,15 +77,32 @@
   text-align: center;
 }
 
-.container table td, .container table th {
+.container table td,
+.container table th {
   width: auto;
 }
 
-.container table a {
+.container table .parent-del, .container table .parent-del a {
+  position: relative;
+  display: inline;
   padding: 0.5rem;
   background-color: red;
   color: aliceblue;
   cursor: pointer;
   border-radius: 5px;
+  opacity: 0.7;
+}
+
+.container table .parent-del:hover, .container table .parent-del a:hover {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container table .parent-del a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

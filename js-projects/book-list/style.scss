@@ -40,24 +40,47 @@ $mar-pad: 0.5rem;
       border-color: rgba($color: black, $alpha: 0.5);
     }
   }
-  table{
-      width: 100%;
-      border: 1px solid grey;
-      border-collapse: collapse;
-      margin: $mar-pad;
+  div{
+    background-color: red;
+    color: aliceblue;
+    border:1px solid darkred;
+    margin: $mar-pad;
+    padding: $mar-pad;
+    width: 100%;
+  }
+  table {
+    width: 100%;
+    border: 1px solid grey;
+    border-collapse: collapse;
+    margin: $mar-pad;
+    padding: $mar-pad;
+    text-align: center;
+    td,
+    th {
+      @extend table;
+      width: auto;
+    }
+    .parent-del {
+      position: relative;
+      display: inline;
       padding: $mar-pad;
-      text-align: center;
-      td,th{
-        @extend table;
-        width: auto;
+      background-color: red;
+      color: aliceblue;
+      cursor: pointer;
+      border-radius: 5px;
+      opacity: 0.7;
+      &:hover{
+        opacity: 1;
+        transition: 0.5s;
       }
-      a{
-        padding: $mar-pad;
-        background-color: red;
-        color: aliceblue;
-        cursor: pointer;
-        border-radius: 5px;
+      a {
+        @extend .parent-del;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        
       }
-     
+    }
   }
 }
