@@ -4,6 +4,7 @@ const isbnInput = document.getElementById("isbn");
 const submit = document.querySelector("[type=submit]");
 const tableRow = document.querySelector("tbody");
 const bookCont = document.querySelector(".container");
+let alertDiv; // alertdiv kontrolünü boş inputlarda üst üste çıkmaması için kontrol etmek gerekiyor. bu yüzden global scope da let ile tanımladım
 //library array oluşturuldu
 let library = [];
 //localstorage da varsa önceki kayıtlar çekildi
@@ -24,6 +25,7 @@ submit.addEventListener("click", () => {
   );
   // inputların boşluk kontrolü
   if (myBook.title == "" || myBook.author == "" || myBook.isbn == "") {
+    if (alertDiv) return
     showAlert("Inputs can not be Empty!");
     return;
   }
@@ -37,6 +39,7 @@ submit.addEventListener("click", () => {
       showAlert(
         `You registered before named ${title} by ${author} with same ${isbn} ISBN`
       );
+      titleInput.value = authorInput.value = isbnInput.value ="";
       return;
     }
     // kayıt yoksa null yerine boş array olarak dönmesi için
@@ -58,6 +61,7 @@ submit.addEventListener("click", () => {
   library.push(myBook);
   // local storage ekledik
   localStorage.setItem("book", JSON.stringify(library));
+  titleInput.value = authorInput.value = isbnInput.value ="";
 });
 
 // silme işlemi
@@ -94,12 +98,11 @@ function listBooks(library) {
     </tr>`;
       tableRow.innerHTML += htmlStr;
     });
-    console.log(library);
   }
 }
 // ortadaki görünüp kaybolan uyarılar. duruma göre string gönderiliyor
 function showAlert(str) {
-  const alertDiv = document.createElement("div");
+  alertDiv = document.createElement("div");
   alertDiv.innerHTML = str + "<br>";
   bookCont.insertBefore(alertDiv, bookCont.lastElementChild);
   // 3 saniye sonra kaybolması için
