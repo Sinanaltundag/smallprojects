@@ -108,5 +108,6 @@ function showAlert(str) {
   // 3 saniye sonra kaybolması için
   setInterval(() => {
     alertDiv.remove();
+    alertDiv=""
   }, 3000);
 }
