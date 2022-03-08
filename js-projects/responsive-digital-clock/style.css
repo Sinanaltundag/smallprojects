@@ -40,6 +40,6 @@ h1{
 @media (min-width: 1400px) {
   .clock {
     top: auto;  
-    bottom: 38vw;
+    bottom: 40vw;
   }
 }
