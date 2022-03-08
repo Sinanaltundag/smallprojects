@@ -37,7 +37,7 @@ h1{
     right: 28vw;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1700px) {
   .clock {
     top: auto;  
     bottom: 40vw;
