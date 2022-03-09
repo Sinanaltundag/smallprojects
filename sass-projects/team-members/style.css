@@ -29,7 +29,4 @@ img {
   .col:nth-child(2n + 2) {
     margin-top: 0rem;
   }
-  header .d-flex{
-      
-  }
 }
