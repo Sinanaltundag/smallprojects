@@ -11,7 +11,7 @@ submitBtn.addEventListener("click",(e)=>{
 
 
 let fetchWeather= (city) => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=5bebff646b1b4adcb3b58ff377ff52ab`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=5bebff646b1b4adcb3b58ff377ff52ab`)
 
     .then(response=> {
         if (response.status!=200){
