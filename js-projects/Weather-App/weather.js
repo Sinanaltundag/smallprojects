@@ -15,7 +15,7 @@ let fetchWeather= (city) => {
 
     .then(response=> {
         if (response.status!=200){
-            throw new Error('Can not reach weather info at the moment!');
+            throw new Error('Can not find this city!');
         }
         return response.json()
     })
