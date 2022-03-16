@@ -29,16 +29,18 @@ let fetchWeather= (city) => {
             throw new Error('You search this city before!');
         }
         searched.push(cityName)
-        let tempC=(myData.main.temp-273.15).toFixed();
-        let card = `<li>
-        <div class="city">
-        <h2 class="city-name">${cityName} <sup>${country}</sup></h2>
+        let tempC=Math.round(myData.main.temp-273.15);
+        const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+        let card = document.createElement("li")
+        card.classList.add("city")
+        card.innerHTML=`<h2 class="city-name">${cityName} <sup>${country}</sup></h2>
         <p class="city-temp">${tempC}<sup>℃</sup></p>
-        <object data="./svg/${icon}.svg"> </object>
-        <p class="figcaption">${weather}</p>
-        </div>
-        </li>`;
-        weatherCardList.innerHTML += card
+        <figure>
+<img class="city-icon" src="${iconUrl}">
+<figcaption>${weather}</figcaption>
+</figure>`;
+         
+        weatherCardList.prepend(card) 
     })
     .catch(err=>alert(err))
 }
