@@ -52,11 +52,11 @@ const getApiUserList = async (page) => {
           prevNextLinks[0].disabled=true;
       }
       prevNextLinks[1].addEventListener("click", () => {
-        page = +document.getElementById("page").textContent;
+        // page = +document.getElementById("page").textContent;
         getApiUserList(page + 1);
       });
       prevNextLinks[0].addEventListener("click", () => {
-        page = +document.getElementById("page").textContent;
+        // page = +document.getElementById("page").textContent;
         getApiUserList(page - 1);
       });
     }
