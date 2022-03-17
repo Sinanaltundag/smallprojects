@@ -9,10 +9,10 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
         <header>
-            <div class="px-3 py-2 bg-dark text-white text-center">
+            <div class="px-3 py-3 bg-dark text-white text-center ">
               <a href="#" class="navbar-brand d-flex align-items-center float-start">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                 <strong>Album</strong>
@@ -23,114 +23,68 @@
                 <button type="button" class="btn btn-primary">Sign-up</button>
               </div>
             </div>
-            <div class="px-3 py-2 border-bottom mb-3">
-              <div class="container w-75">
-                <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto d-flex gap-3 " id="search-form">
-                  <label for="exampleDataList" class="form-label">Category</label>
-<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-<datalist id="datalistOptions">
-  <option value="San Francisco">
-  <option value="New York">
-  <option value="Seattle">
-  <option value="Los Angeles">
-  <option value="Chicago">
-</datalist>
+            <div class="px-3 py-2 border-bottom mb-3 ">
+              <div class="container">
+                <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto d-flex gap-3 align-items-center" id="search-form">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="order" id="inlineRadio1" value="popular" checked>
+                    <label class="form-check-label" for="inlineRadio1">Popular</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="order" id="inlineRadio2" value="latest">
+                    <label class="form-check-label" for="inlineRadio2">Latest</label>
+                  </div>
+                
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select Category</option>
+                    <option value="backgrounds">Backgrounds</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="nature">Nature</option>
+                    <option value="science">Science</option>
+                    <option value="education">Education</option>
+                    <option value="feelings">Feelings</option>
+                    <option value="health">Health</option>
+                    <option value="people">People</option>
+                    <option value="religion">Religion</option>
+                    <option value="places">Places</option>
+                    <option value="animals">Animals</option>
+                    <option value="computer">Computer</option>
+                    <option value="food">Food</option>
+                    <option value="sports">Sports</option>
+                    <option value="transportation">Transportation</option>
+                    <option value="travel">Travel</option>
+                    <option value="buildings">Buildings</option>
+                    <option value="business">Business</option>
+                    <option value="music">Music</option>
+                  
+                  </select>
                   <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-                  <button type="button" class="btn btn-primary">Search</button>
+                  <button type="submit" class="btn btn-primary">Search</button>
                 </form>
         
                 
               </div>
+              <div id="alert" class="text-center pt-2"></div>
             </div>
     </header>
     <main>
-      <div class="album py-5 bg-light">
+      <div class="album py-5 bg-light justify-content-center">
         <div class="container">
     
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div id="image-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-3">
 
 
 
 
-            <div class="col">
-              <div class="card shadow-sm">
-                <a type="button" class="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <img src="https://pixabay.com/get/g5d2c2ecb52621db0b62e55f6a1c7ce3aba4e814ecbc41dd50b50a62b8fc9f66af6b8ac55103728ddfe46ced1987b7e2fe236be94a0c38d2ae70a39d0c135acac_640.jpg" alt="" class="img-thumbnail w-100">
-     </a>
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    
-                      <a class="badge bg-info p-2" href="https://pixabay.com/photos/sunflower-flower-plant-petals-1127174/" target="_blank" rel="noopener noreferrer">Go Pixabay</a>
-                    
-                    
-                    <small class="text-muted">Likes <span>907</span></small>
-                  </div>
-                </div>
-              </div>
 
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <img class="img-fluid" src="https://pixabay.com/get/g347e531921d2f6262063a8ee61c94441837ab65757fb36c1668a58c49f9c8fc4db6912469f121be25c55ce031704111e62ce61331aca1f7f4ebb21439da0e8c1_1280.jpg" alt="sunflower, flower, plant">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Understood</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-    
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-    
-            
-            
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-    
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </main>
 
 
-<footer class="bg-dark text-white">
-  <a href="#" class="float-end me-5">Back to top</a>
+<footer class="bg-dark text-white footer mt-auto py-2">
+  <a href="#" id="back" class="position-fixed end-0 me-3">Back to top</a>
   <p>&copy; Sinan 2022</p>
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
