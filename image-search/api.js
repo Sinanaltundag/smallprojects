@@ -9,8 +9,7 @@ const fetchPhotos = async(page,categoryBefore, orderBefore)=>{
     let searchWords = searchInput.value.split(" ").join("+")
     let categoryValue = category.value
     const order = document.querySelector('input[name="order"]:checked');
-
-    let orderValue = orderBefore&&order.value
+    let orderValue = order.value
     let categoryStmt;
     if (categoryBefore) {
         categoryStmt =`&category=${categoryBefore}`
@@ -18,18 +17,21 @@ const fetchPhotos = async(page,categoryBefore, orderBefore)=>{
         categoryStmt=(categoryValue)?`&category=${categoryValue}`:""
     }
     
+    console.log(categoryStmt) 
 let searchStmt = `https://pixabay.com/api/?key=${apiKey}&q=${searchWords}&image_type=photo&per_page=12&page=${page}&order=${orderValue}${categoryStmt}`
+console.log(searchStmt)
+// let nextPrevStmt= searchStmt
     try {
         const response = axios(searchStmt);
+    console.log(response)
     const responseData = await response;
+    console.log(responseData.data);
 if (responseData.data.hits.length ==0) {
     throw new Error("There were no results")
 
 } 
 info(responseData.data.total+" result find","alert-success", 10)
 imageContainer.innerHTML=""
-const buttons = document.querySelector("main .container>.container")
-if (buttons){buttons.remove();} 
 responseData.data.hits.forEach(picture => {
     
 
@@ -76,12 +78,11 @@ photoCard.innerHTML=`<div class="card h-100 shadow-md">
 
     imageContainer.append(photoCard)
 });
-const mainContainer = document.querySelector("main .container");
-mainContainer.innerHTML += `<div class="container text-center mt-3"><div class="btn-group " role="group" aria-label="Basic outlined example">
+imageContainer.innerHTML += `<section class="container text-center"><div class="btn-group " role="group" aria-label="Basic outlined example">
 <button type="button" id="prev" class="btn btn-outline-primary mx-2">Previous Page</button>
 <div class="btn">Page <span id="page">${page}</span></div>
 <button type="button" id="next" class="btn btn-outline-primary mx-2">Next Page</button>
-</div></div>`;
+</div></section>`;
       let nextLink = document.querySelector("#next");
       let prevLink = document.querySelector("#prev");
       if (page<=1) {
