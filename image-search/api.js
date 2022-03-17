@@ -28,6 +28,8 @@ if (responseData.data.hits.length ==0) {
 } 
 info(responseData.data.total+" result find","alert-success", 10)
 imageContainer.innerHTML=""
+const buttons = document.querySelector("main .container>.container")
+if (buttons){buttons.remove();} 
 responseData.data.hits.forEach(picture => {
     
 
