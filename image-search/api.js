@@ -79,11 +79,11 @@ photoCard.innerHTML=`<div class="card h-100 shadow-md">
 
     imageContainer.appendChild(photoCard)
 });
-album.innerHTML += `<section class="container text-center float-end"><div class="btn-group " role="group" aria-label="Basic outlined example">
-<button type="button" id="prev" class="btn btn-outline-primary mx-2">Previous Page</button>
+album.innerHTML += `<div class="container text-center mt-3"><div class="btn-group " role="group" aria-label="Basic outlined example">
+<button type="button" id="prev" class="btn btn-outline-primary mx-2">&#11013; Previous Page</button>
 <div class="btn">Page <span id="page">${page}</span></div>
-<button type="button" id="next" class="btn btn-outline-primary mx-2">Next Page</button>
-</div></section>`;
+<button type="button" id="next" class="btn btn-outline-primary mx-2">Next Page &#10145;</button>
+</div></div>`;
       let nextLink = document.querySelector("#next");
       let prevLink = document.querySelector("#prev");
       if (page<=1) {
