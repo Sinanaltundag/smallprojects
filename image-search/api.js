@@ -116,6 +116,7 @@ const info = (msg,bsClass, durationSecond)=>{
       result.setAttribute("role", "alert");
       result.innerText=msg;
       const alertDiv = document.getElementById("alert")
+      alertDiv.innerHTML=""
       alertDiv.appendChild(result)
       setTimeout(()=>{
         alertDiv.innerHTML=""
