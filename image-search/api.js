@@ -9,7 +9,8 @@ const fetchPhotos = async(page,categoryBefore, orderBefore)=>{
     let searchWords = searchInput.value.split(" ").join("+")
     let categoryValue = category.value
     const order = document.querySelector('input[name="order"]:checked');
-    let orderValue = order.value
+
+    let orderValue = orderBefore&&order.value
     let categoryStmt;
     if (categoryBefore) {
         categoryStmt =`&category=${categoryBefore}`
@@ -17,15 +18,10 @@ const fetchPhotos = async(page,categoryBefore, orderBefore)=>{
         categoryStmt=(categoryValue)?`&category=${categoryValue}`:""
     }
     
-    console.log(categoryStmt) 
 let searchStmt = `https://pixabay.com/api/?key=${apiKey}&q=${searchWords}&image_type=photo&per_page=12&page=${page}&order=${orderValue}${categoryStmt}`
-console.log(searchStmt)
-// let nextPrevStmt= searchStmt
     try {
         const response = axios(searchStmt);
-    console.log(response)
     const responseData = await response;
-    console.log(responseData.data);
 if (responseData.data.hits.length ==0) {
     throw new Error("There were no results")
 
@@ -78,7 +74,8 @@ photoCard.innerHTML=`<div class="card h-100 shadow-md">
 
     imageContainer.append(photoCard)
 });
-imageContainer.innerHTML += `<div class="container text-center"><div class="btn-group " role="group" aria-label="Basic outlined example">
+const mainContainer = document.querySelector("main .container");
+mainContainer.innerHTML += `<div class="container text-center mt-3"><div class="btn-group " role="group" aria-label="Basic outlined example">
 <button type="button" id="prev" class="btn btn-outline-primary mx-2">Previous Page</button>
 <div class="btn">Page <span id="page">${page}</span></div>
 <button type="button" id="next" class="btn btn-outline-primary mx-2">Next Page</button>
