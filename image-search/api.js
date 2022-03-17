@@ -1,8 +1,7 @@
 const searchForm = document.getElementById("search-form");
 const searchInput = document.querySelector("[type=search]");
 const category = document.querySelector("[class=form-select]");
-const imageContainer = document.getElementById("image-container")
-
+const album = document.querySelector(".album .container")
 
 const fetchPhotos = async(page,categoryBefore, orderBefore)=>{
     let apiKey = "26174232-f956318e8a670396f67464227"
@@ -31,7 +30,9 @@ if (responseData.data.hits.length ==0) {
 
 } 
 info(responseData.data.total+" result find","alert-success", 10)
-imageContainer.innerHTML=""
+album.innerHTML=`<div id="image-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-3"></div>`
+const imageContainer = document.getElementById("image-container")
+
 responseData.data.hits.forEach(picture => {
     
 
@@ -76,9 +77,9 @@ photoCard.innerHTML=`<div class="card h-100 shadow-md">
   </div>
 </div>`
 
-    imageContainer.append(photoCard)
+    imageContainer.appendChild(photoCard)
 });
-imageContainer.innerHTML += `<section class="container text-center"><div class="btn-group " role="group" aria-label="Basic outlined example">
+album.innerHTML += `<section class="container text-center float-end"><div class="btn-group " role="group" aria-label="Basic outlined example">
 <button type="button" id="prev" class="btn btn-outline-primary mx-2">Previous Page</button>
 <div class="btn">Page <span id="page">${page}</span></div>
 <button type="button" id="next" class="btn btn-outline-primary mx-2">Next Page</button>
