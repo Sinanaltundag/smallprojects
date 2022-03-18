@@ -41,7 +41,7 @@ const photoCard = document.createElement("div")
 photoCard.className="col"
 photoCard.innerHTML=`<div class="card h-100 shadow-md">
   <a data-bs-toggle="modal" data-bs-target="#pic-id-${picId}">
-  <img src=${webformatURL} alt=${tags} class="img-thumbnail  w-100">
+  <img role="button" src=${webformatURL} alt=${tags} class="img-thumbnail  w-100">
 </a>
 <div class="card-body">
        
