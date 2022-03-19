@@ -17,7 +17,7 @@ const fetchPhotos = async(page,categoryBefore, orderBefore)=>{
     }
     
     console.log(categoryStmt) 
-let searchStmt = `https://pixabay.com/api/?key=${apiKey}&q=${searchWords}&image_type=photo&per_page=12&page=${page}&order=${orderValue}${categoryStmt}`
+let searchStmt = `https://pixabay.com/api/?key=${apiKey}&q=${searchWords}&image_type=photo&per_page=12&safesearch=true&page=${page}&order=${orderValue}${categoryStmt}`
 console.log(searchStmt)
 // let nextPrevStmt= searchStmt
     try {
