@@ -6,16 +6,19 @@ let todoDiv = document.getElementById("todo");
 let lists = document.querySelectorAll(".list");
 let ulList = document.getElementsByTagName("ul")[0];
 let todoContainer = document.getElementById("todos");
+
+const addFunc = () => {
+  if (newInput.value.trim()) {
+    ulList.innerHTML += `<li class="flex list"><i class="fas fa-solid fa-pen"></i><input type="text" class="todo-list" value="${newInput.value}" disabled /><button class="erase">-</button></li>`;
+    newInput.value = "";
+  }
+  complete.innerHTML = completed;
+  all.innerHTML = document.querySelectorAll(".list").length;
+}
+
 add.addEventListener(
   "click",
-  (addFunc = () => {
-    if (newInput.value.trim()) {
-      ulList.innerHTML += `<li class="flex list"><i class="fas fa-solid fa-pen"></i><input type="text" class="todo-list" value="${newInput.value}" disabled /><button class="erase">-</button></li>`;
-      newInput.value = "";
-    }
-    complete.innerHTML = completed;
-    all.innerHTML = document.querySelectorAll(".list").length;
-  })
+  (addFunc)
 );
 let completed = 0;
 all.innerHTML = lists.length;
@@ -52,7 +55,7 @@ todoDiv.addEventListener(
             todoContainer.style.opacity = "1";
             // todoDiv.style.opacity="1"
             todoDiv.addEventListener("click", todo);
-            add.EventListener("click", addFunc);
+            add.addEventListener("click", addFunc);
           }
         });
         return;
