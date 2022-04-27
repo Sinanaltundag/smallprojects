@@ -3,6 +3,8 @@ const submitBtn = document.querySelector("button")
 const inputBox = document.querySelector("input")
 let searched = []
 
+localStorage.setItem("apiKey", EncryptStringAES("5bebff646b1b4adcb3b58ff377ff52ab"));
+
 submitBtn.addEventListener("click",(e)=>{
     e.preventDefault();
     fetchWeather(inputBox.value)
@@ -11,7 +13,12 @@ submitBtn.addEventListener("click",(e)=>{
 
 
 let fetchWeather= (city) => {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=5bebff646b1b4adcb3b58ff377ff52ab`)
+if (!city) {
+    return alert("Please enter a city name")
+}
+    const apiKey = DecryptStringAES(localStorage.getItem("apiKey"));
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`)
 
     .then(response=> {
         if (response.status!=200){
@@ -25,7 +32,6 @@ let fetchWeather= (city) => {
         let country = myData.sys.country;
         let cityName = (myData.name).split(" ")[0];
         if (searched.includes(cityName)) {
-            console.log("first")
             throw new Error('You search this city before!');
         }
         searched.push(cityName)
@@ -42,7 +48,7 @@ let fetchWeather= (city) => {
          
         weatherCardList.prepend(card) 
     })
-    .catch(err=>alert(err))
+    .catch(err=>alert(err.message))
 }
 
 
