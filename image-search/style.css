@@ -1,6 +1,9 @@
 h1 {
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
 }
+.buttons{
+  width: 300px;
+}
 
 #back{
     bottom: 25px;
@@ -56,4 +59,12 @@ h1 {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  @media (max-width: 768px){
+
+.responsive-content{
+  display: none !important;
+}
+
   }

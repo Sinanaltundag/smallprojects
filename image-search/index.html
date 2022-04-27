@@ -1,88 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Image Search by Sinan</title>
-</head>
-<body class="d-flex flex-column min-vh-100 bg-light">
-
-        <header>
-            <div class="px-3 py-3 bg-dark text-white text-center ">
-              <a href="#" class="navbar-brand d-flex align-items-center float-start">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                <strong>Album</strong>
-              </a>
-              <h1 class="d-inline">Image Search</h1>
-              <div class="text-end d-inline float-end">
-                <button type="button" class="btn btn-light text-dark me-2">Login</button>
-                <button type="button" class="btn btn-primary">Sign-up</button>
+  </head>
+  <body class="d-flex flex-column min-vh-100 bg-light">
+    <header>
+      <div class="px-3 py-3 bg-dark text-white text-center d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center responsive-content">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            aria-hidden="true"
+            class="me-2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+            ></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <strong>Album</strong>
+        </a>
+        <h1 class="d-inline">Image Search</h1>
+        <div class=" d-flex buttons">
+          <button type="button" class="btn btn-light text-dark me-2 w-50 ">
+            Login
+          </button>
+          <button type="button" class="btn btn-primary w-50">Sign-up</button>
+        </div>
+      </div>
+      <div class="px-3 py-2 border-bottom mb-3">
+        <div class="container">
+          <form
+            class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto d-md-flex gap-3 align-items-center"
+            id="search-form"
+          >
+            <div >
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="order"
+                  id="inlineRadio1"
+                  value="popular"
+                  checked
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Popular</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="order"
+                  id="inlineRadio2"
+                  value="latest"
+                />
+                <label class="form-check-label" for="inlineRadio2"
+                  >Latest</label
+                >
               </div>
             </div>
-            <div class="px-3 py-2 border-bottom mb-3 ">
-              <div class="container">
-                <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto d-flex gap-3 align-items-center" id="search-form">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="order" id="inlineRadio1" value="popular" checked>
-                    <label class="form-check-label" for="inlineRadio1">Popular</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="order" id="inlineRadio2" value="latest">
-                    <label class="form-check-label" for="inlineRadio2">Latest</label>
-                  </div>
-                
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected value="">Select Category</option>
-                    <option value="backgrounds">Backgrounds</option>
-                    <option value="fashion">Fashion</option>
-                    <option value="nature">Nature</option>
-                    <option value="science">Science</option>
-                    <option value="education">Education</option>
-                    <option value="feelings">Feelings</option>
-                    <option value="health">Health</option>
-                    <option value="people">People</option>
-                    <option value="religion">Religion</option>
-                    <option value="places">Places</option>
-                    <option value="animals">Animals</option>
-                    <option value="computer">Computer</option>
-                    <option value="food">Food</option>
-                    <option value="sports">Sports</option>
-                    <option value="transportation">Transportation</option>
-                    <option value="travel">Travel</option>
-                    <option value="buildings">Buildings</option>
-                    <option value="business">Business</option>
-                    <option value="music">Music</option>
-                  
-                  </select>
-                  <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-                  <button type="submit" class="btn btn-primary">Search</button>
-                </form>
-        
-                
-              </div>
-              <div id="alert" class="text-center pt-2"></div>
-            </div>
+           
+            <select class="form-select" aria-label="Default select example">
+              <option selected value="">Select Category</option>
+              <option value="backgrounds">Backgrounds</option>
+              <option value="fashion">Fashion</option>
+              <option value="nature">Nature</option>
+              <option value="science">Science</option>
+              <option value="education">Education</option>
+              <option value="feelings">Feelings</option>
+              <option value="health">Health</option>
+              <option value="people">People</option>
+              <option value="religion">Religion</option>
+              <option value="places">Places</option>
+              <option value="animals">Animals</option>
+              <option value="computer">Computer</option>
+              <option value="food">Food</option>
+              <option value="sports">Sports</option>
+              <option value="transportation">Transportation</option>
+              <option value="travel">Travel</option>
+              <option value="buildings">Buildings</option>
+              <option value="business">Business</option>
+              <option value="music">Music</option>
+            </select>
+            <input
+              type="search"
+              class="form-control my-3"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+            <button type="submit" class="btn btn-primary w-100">Search</button>
+          </form>
+        </div>
+        <div id="alert" class="text-center pt-2"></div>
+      </div>
     </header>
     <main>
       <div class="album py-5 bg-light justify-content-center">
-        <div class="container">
-    
-          
-        </div>
+        <div class="container"></div>
       </div>
     </main>
 
-
-<footer class="bg-dark text-white footer mt-auto py-2">
-  <a href="#" id="back" class="position-fixed end-0 me-3">Back to Top &#9195;</a>
-  <p>&copy; Sinan 2022</p>
-</footer>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <footer class="bg-dark text-white footer mt-auto py-2">
+      <a href="#" id="back" class="position-fixed end-0 me-3"
+        >Back to Top &#9195;</a
+      >
+      <p>&copy; Sinan 2022</p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
     <script src="./api.js"></script>
-</body>
+  </body>
 </html>
