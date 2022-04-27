@@ -8,7 +8,7 @@ button.addEventListener("click", () => {
   }
   let n = inputNum.value;
   if (n < 1 || n > 8 || n == "") {
-    alert("Lütfen 1 ile 8 arasında bir sayı giriniz.");
+    alert("Enter a number between 1-8");
     return;
   }
 

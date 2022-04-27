@@ -12,7 +12,7 @@ clockTop.innerHTML = h + ":" + m +":"+s;
 }, 1000);
 
 function operate(op) {
-  if (resultLine.innerHTML == "") return;
+  if (resultLine.innerHTML == "0") return;
 
 if (opSpan.innerHTML=="" && operateLine.innerHTML){
          operateLine.innerHTML=resultLine.innerHTML;
@@ -64,7 +64,6 @@ if (e.target.tagName==='BUTTON') {
         return                                                      //
       }
       
-        resultLine.innerHTML = (resultLine.innerHTML.endsWith(".")) &&resultLine.innerHTML.slice(0, -1);
       
       if (resultLine.innerHTML){
         operate(opSpan.innerHTML);
