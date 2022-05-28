@@ -1,0 +1,32 @@
+body{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    text-align: center;
+    
+}
+.nav-links{
+    margin-left: 5px;
+}
+.inner-container{
+    width: 25rem;
+    margin: 0 auto;
+    list-style-position: inside
+}
+.text-gold{
+    color: goldenrod;
+}
+.text-bold{
+    font-weight: bold;
+}
+h1{
+    color: red;
+}
+h2{
+    color: purple;
+}
+
+.product-img{
+    width: 20rem;
+}
